@@ -1,0 +1,25 @@
+{
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:bullseye",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "mads-hartmann.bash-ide-vscode",
+        "scala-lang.scala",
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17",
+      "installMaven": "true"
+    },
+    "ghcr.io/devcontainers-contrib/features/scala-sdkman:2": {
+      "version": "2.12.15"
+    }
+  },
+  "mounts": [
+    "source=${localEnv:HOME}/.m2,target=/home/vscode/.m2,type=bind,consistency=cached"
+  ]
+}
